@@ -1,8 +1,10 @@
+package.path = package.path .. ";./vendor/?.lua;./vendor/?/init.lua"
+package.cpath = package.cpath .. ";./vendor/?.so;./vendor/?/?.so"
+
 local config = require("config")
 local commands = require("commands")
 local lock = require("lock")
 
--- محاولة تحميل مكتبة linenoise بحماية
 local has_linenoise, linenoise = pcall(require, "linenoise")
 
 local history_file = ".meow_history"
